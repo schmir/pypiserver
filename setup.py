@@ -8,13 +8,13 @@ from setuptools import setup
 tests_require = [
     "pytest>=2.3",
     "tox",
-    "twine",
+    "twine>=1.11",
     "pip>=7",
     "passlib>=1.6",
     "webtest",
 ]
 
-setup_requires = ["setuptools", "setuptools-git >= 0.3", "wheel >= 0.25.0"]
+setup_requires = ["setuptools", "setuptools-git >= 0.3", "wheel >= 0.31"]
 
 
 def read_file(rel_path: str):
@@ -41,6 +41,7 @@ setup(
     name="pypiserver",
     description="A minimal PyPI server for use with pip/easy_install.",
     long_description=read_file("README.rst"),
+    long_description_content_type='text/markdown',
     version=get_version(),
     packages=["pypiserver"],
     package_data={"pypiserver": ["welcome.html"]},
